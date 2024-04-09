@@ -1,38 +1,52 @@
-const Slider = () => {
-    return (
-        <div>
-            <div className="carousel w-full">
-  <div id="slide1" className="carousel-item relative w-full">
-    <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide4" className="btn btn-circle">❮</a> 
-      <a href="#slide2" className="btn btn-circle">❯</a>
-    </div>
-  </div> 
-  <div id="slide2" className="carousel-item relative w-full">
-    <img src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide1" className="btn btn-circle">❮</a> 
-      <a href="#slide3" className="btn btn-circle">❯</a>
-    </div>
-  </div> 
-  <div id="slide3" className="carousel-item relative w-full">
-    <img src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide2" className="btn btn-circle">❮</a> 
-      <a href="#slide4" className="btn btn-circle">❯</a>
-    </div>
-  </div> 
-  <div id="slide4" className="carousel-item relative w-full">
-    <img src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide3" className="btn btn-circle">❮</a> 
-      <a href="#slide1" className="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
-        </div>
-    );
-};
 
-export default Slider;
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import "../style.css"
+
+// import required modules
+import { Autoplay, Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+
+export default function App() {
+  return (
+    <div className=''>
+      <Swiper
+        cssMode={true}
+        navigation={true}
+        slidesPerView={1}
+        spaceBetween={1}
+        centeredSlides={true}
+        pagination={{
+          clickable: true,
+        }}
+        loop={true}
+        mousewheel={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        keyboard={true}
+        modules={[Autoplay,Navigation, Pagination, Mousewheel, Keyboard]}
+        className="mySwiper h-60 lg:h-96 mt-5 lg:mt-10"
+      >
+        <SwiperSlide>
+          <img className='h-60 lg:h-96'  src="https://i.ibb.co/Kq73tXF/tidy-room-with-big-mirror.jpg" alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className='h-60 lg:h-96'  src="https://i.ibb.co/Kq73tXF/tidy-room-with-big-mirror.jpg" alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className='h-60 lg:h-96'  src="https://i.ibb.co/Kq73tXF/tidy-room-with-big-mirror.jpg" alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className='h-60 lg:h-96'  src="https://i.ibb.co/Kq73tXF/tidy-room-with-big-mirror.jpg" alt="" />
+        </SwiperSlide>
+        
+      </Swiper>
+    </div>
+  );
+}
