@@ -7,8 +7,9 @@ import {
 } from "react-router-dom";
 import Root from './Components/Root';
 import Home from './Components/Home';
-import Rooms from './Components/Room/Rooms';
 import Blogs from './Components/Blog/Blogs';
+import RoomDetails from './Components/Room/RoomDetails';
+import Rooms from './Components/Room/Rooms';
 
 
 const router = createBrowserRouter([
@@ -21,8 +22,19 @@ const router = createBrowserRouter([
         element:<Home></Home>
       },
       {
-        path:"/rooms",
-        element:<Rooms></Rooms>
+       
+      },
+      {
+        path:"rooms",
+        element:<Rooms></Rooms>,
+        loader:() =>fetch("../public/RoomDetailsData.json")
+      },
+    
+      {
+        path:"/room-details/:roomId",
+        element:<RoomDetails></RoomDetails>,
+        loader:() =>fetch("../public/RoomDetailsData.json")
+        
       },
       {
         path:"/blogs",
