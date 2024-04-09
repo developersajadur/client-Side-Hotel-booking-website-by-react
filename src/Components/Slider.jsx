@@ -46,7 +46,7 @@ export default function App() {
           <img className='h-60 lg:h-96'  src="https://i.ibb.co/RP1nbz7/3d-rendering-modern-luxury-bedroom-suite-bathroom.jpg" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className='h-60 lg:h-96'  src="https://i.ibb.co/2FY5pjy/bangkok-thailand-august-12-2016-beautiful-luxury-bedroom-int.jpg" alt="" />
+          <img className='h-60 lg:h-96'  src="hhttps://i.ibb.co/k8tymyw/luxury-classic-modern-bedroom-suite-hotel.jpg" alt="" />
         </SwiperSlide>
         <SwiperSlide>
           <img className='h-60 lg:h-96'  src="https://i.ibb.co/pWcf8FQ/interior-modern-comfortable-hotel-room.jpg" alt="" />

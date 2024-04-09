@@ -38,8 +38,8 @@ const RoomDetails = () => {
         <h1 className="text-4xl font-bold">Room</h1>
       </div>
 
-      <div className="flex gap-10">
-        <div className="bg-[#F5F5F5] rounded-xl flex flex-col gap-5 px-4 py-6 h-full w-[35%]">
+      <div className="flex flex-col lg:flex-row gap-10">
+        <div className="bg-[#F5F5F5] rounded-xl flex flex-col gap-5 px-4 py-6 h-full w-full lg:w-[35%]">
           <h2 className="text-2xl font-bold ml-2">Booking Sheet</h2>
           {/* ---------------- Check in ---------------- */}
           <div className="">
@@ -117,7 +117,7 @@ const RoomDetails = () => {
 
         {/* -------------------- right side ------------------------ */}
 
-        <div className="h-full w-[65%]">
+        <div className="h-full w-full lg:w-[65%]">
           {/* -------- slider ----------- */}
           <div className=''>
             <Swiper
@@ -140,13 +140,13 @@ const RoomDetails = () => {
               className="mySwiper  h-60 lg:h-96 rounded-xl"
               >
                 <SwiperSlide>
-                  <img className='h-60 lg:h-96' src="https://i.ibb.co/Kq73tXF/tidy-room-with-big-mirror.jpg" alt="" />
+                  <img className='h-60 lg:h-96' src={room.image_url}alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img className='h-60 lg:h-96' src="https://i.ibb.co/Kq73tXF/tidy-room-with-big-mirror.jpg" alt="" />
+                  <img className='h-60 lg:h-96' src={room.image_url} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img className='h-60 lg:h-96' src="https://i.ibb.co/Kq73tXF/tidy-room-with-big-mirror.jpg" alt="" />
+                  <img className='h-60 lg:h-96' src={room.image_url} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
                   <img className='h-60 lg:h-96' src={room.image_url} alt="" />
@@ -159,7 +159,7 @@ const RoomDetails = () => {
             <div className="mt-10 flex flex-col gap-4">
               <h1 className="text-3xl font-bold">{room.estate_title} ({room.status})</h1>
               <h6 className="text-xl font-semibold">{room.price}</h6>
-              <div className="flex gap-10">
+              <div className="flex flex-col lg:flex-row gap-4 lg:gap-10">
               <div className="flex items-center gap-3"><PiLineSegmentsFill />{room.segment_name} </div>
                 <div className="flex items-center gap-3"><FaRegUser /> {room.parson} person</div>
                 <div className="flex items-center gap-3"><PiBoundingBoxLight />{room.area}</div>
@@ -180,10 +180,14 @@ const RoomDetails = () => {
   <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
 </div>
                 </div>
+                <form>
+                <textarea className="textarea w-full h-52 textarea-accent" required placeholder="Write Your Review here..."></textarea>
+                <div className="flex justify-start"> <button className="btn btn-error">Submit Review</button></div>
+                </form>
                 <div>
-            <textarea className="textarea w-full h-52 textarea-accent" placeholder="Write Your Review here..."></textarea>
+           
             </div>
-            <div className="flex justify-start"> <button className="btn btn-error">Submit Review</button></div>
+            
            
             </div>
 
