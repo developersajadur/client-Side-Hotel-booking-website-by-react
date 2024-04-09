@@ -15,19 +15,20 @@ const HomePageRooms = () => {
     //     setSeeDetails(rooms.length)
     // }
     return (
-       <div className="px-10">
+       <div className="px-1 lg:px-10 bg-[#F5F5F5] pt-10 rounded-t-[5%]">
          <h1 className="text-4xl font-bold text-center mb-10">Our Rooms {rooms.length} </h1>
-         <div className="grid grid-cols-2 gap-10">
+         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-y-5 md:gap-x-10 lg:gap-x-12 items-center ">
         {
             rooms.slice(0 , seeDetails ).map(room => <Room
             key={room.id}
+            room={room}
             ></Room>)
         }
          </div>
         {
             seeDetails < rooms.length && (
-                <div className="flex justify-center">
-                <button  className="btn btn-primary">See More</button>
+                <div className="flex justify-center mt-[-55px]">
+                <button  className="btn lg:w-[20%] btn-primary">See More</button>
                 </div>
             )
         }

@@ -22,4 +22,16 @@
     width: 100%;
     object-fit: cover;
   }
+
+  /* ------------- room card style ---------------- */
+
+  .shadow-style{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .book-flex{
+    display: grid;
+    grid-template-columns: auto auto ;
+  }
   

@@ -2,23 +2,25 @@ import { FaRegUser } from "react-icons/fa";
 import { PiBoundingBoxLight } from "react-icons/pi";
 import { FaRegEye } from "react-icons/fa";
 import { PiLineSegmentsFill } from "react-icons/pi";
-const Room = () => {
+import "../../style.css";
+const Room = ({room}) => {
+    const {estate_title , segment_name, description, price , status, area , parson , facilities , image_url} = room;
     return (
-        <div className="flex p-5 shadow-xl w-full mb-20">
+        <div className="shadow-style flex flex-col lg:flex-row p-5 w-full gap-5 h-[90%] flex-grow lg:h-[70%] rounded-2xl mb-20">
         <div className="">
-            <img className="w-[90%] h-full" src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="" />
+            <img className="w-full h-full rounded-2xl" src={image_url} alt="" />
         </div>
         <div className="flex gap-3 flex-col">
-            <h2 className="font-bold text-3xl">Luxury Room</h2>
-            <p className="text-red-500">320 / Per Night</p>
+            <h2 className="font-bold text-3xl">{estate_title}</h2>
+            <p className="text-red-500">{price}</p>
             <p className="">
-            Lorem ipsum dolor sit amet, adipiscing elit. Suspendisse et faucibus felis, sed pulvinar purus.
+           {description}
             </p>
-            <div className="grid grid-cols-2">
-                <div className="flex items-center gap-3"><PiLineSegmentsFill /> Townhouse</div>
-                <div className="flex items-center gap-3"><FaRegUser /> 4 Person</div>
-                <div className="flex items-center gap-3"><PiBoundingBoxLight />  35m2 / 376ft2</div>
-                <div className="flex items-center gap-3"><FaRegEye /> Sea Balcony</div>
+            <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-3"><PiLineSegmentsFill />{segment_name} </div>
+                <div className="flex items-center gap-3"><FaRegUser /> {parson} person</div>
+                <div className="flex items-center gap-3"><PiBoundingBoxLight />{area}</div>
+                <div className="flex items-center gap-3"><FaRegEye /> {facilities[0]}</div>
             </div>
             <button className="btn w-fit btn-error">Book Now</button>
            
