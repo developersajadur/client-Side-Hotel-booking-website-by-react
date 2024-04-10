@@ -36,7 +36,7 @@ const Footer = () => {
     <h6 className="footer-title">Newsletter</h6> 
     <p className="">Stay updated with curated content, <br /> expert insights, tips, and community <br />highlights in our informative <br /> newsletter. Subscribe now</p>
     <form className="w-full flex flex-col gap-5" >
-    <input  type="text" placeholder="Your Email" className="input w-full max-w-xs" required />
+    <input  type="text" placeholder="Your Email" className="input text-black w-full max-w-xs" required />
     <button className="btn w-full btn-error">Subscribe Now</button>
     </form>
     

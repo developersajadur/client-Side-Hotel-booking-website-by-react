@@ -1,6 +1,7 @@
 import Facilities from "./Facilities";
 import HomePageRooms from "./HomePageRooms";
 import Slider from "./Slider";
+import Testimonials from "./Testimonials";
 
 const Home = () => {
     return (
@@ -8,6 +9,7 @@ const Home = () => {
             <Slider></Slider>
             <Facilities></Facilities>
             <HomePageRooms></HomePageRooms>
+            <Testimonials></Testimonials>
         </div>
     );
 };

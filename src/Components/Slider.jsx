@@ -18,7 +18,7 @@ export default function App() {
         cssMode={true}
         navigation={true}
         slidesPerView={1}
-        spaceBetween={1}
+        spaceBetween={30}
         centeredSlides={true}
         pagination={{
           clickable: true,
@@ -26,12 +26,12 @@ export default function App() {
         loop={true}
         mousewheel={true}
         autoplay={{
-          delay: 2500,
+          delay: 5500,
           disableOnInteraction: false,
         }}
         keyboard={true}
         modules={[Autoplay,Navigation, Pagination, Mousewheel, Keyboard]}
-        className="mySwiper h-60 lg:h-96 mt-5 lg:mt-10"
+        className="mySwiper h-60 lg:h-96 sm:mt-5 "
       >
         <SwiperSlide>
           <img className='h-60 lg:h-96'  src="https://i.ibb.co/Kq73tXF/tidy-room-with-big-mirror.jpg" alt="" />
@@ -46,7 +46,7 @@ export default function App() {
           <img className='h-60 lg:h-96'  src="https://i.ibb.co/RP1nbz7/3d-rendering-modern-luxury-bedroom-suite-bathroom.jpg" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className='h-60 lg:h-96'  src="hhttps://i.ibb.co/k8tymyw/luxury-classic-modern-bedroom-suite-hotel.jpg" alt="" />
+          <img className='h-60 lg:h-96'  src="https://i.ibb.co/k8tymyw/luxury-classic-modern-bedroom-suite-hotel.jpg" alt="" />
         </SwiperSlide>
         <SwiperSlide>
           <img className='h-60 lg:h-96'  src="https://i.ibb.co/pWcf8FQ/interior-modern-comfortable-hotel-room.jpg" alt="" />
