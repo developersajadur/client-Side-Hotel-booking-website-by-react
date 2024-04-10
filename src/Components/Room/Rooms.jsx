@@ -4,13 +4,18 @@ import Room from "./Room";
 const Rooms = () => {
     const rooms = useLoaderData();
     return (
-        <div  className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 lg:gap-12 px-1 lg:px-10 mt-10 lg:mt-20">
+        <div className="px-1 lg:px-10 mt-10 lg:mt-20">
+            <div className="w-full  text-center py-5 rounded-xl bg-[#1313130D] mt-10 mb-5">
+            <h1 className="text-4xl font-bold">Our Awesome Rooms</h1>
+        </div>
+        <div  className="grid lg:grid-cols-2 gap-5 md:gap-10 lg:gap-12 mt-10  ">
             {
                 rooms.map(room => <Room
                 key={room.id}
                 room={room}
                 ></Room>)
             }
+        </div>
         </div>
     );
 };

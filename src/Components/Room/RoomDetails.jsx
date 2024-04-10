@@ -35,7 +35,7 @@ const RoomDetails = () => {
   return (
     <div className="px-1 lg:px-10">
       <div className="w-full text-center py-5 rounded-xl bg-[#1313130D] mt-10 mb-10">
-        <h1 className="text-4xl font-bold">Room</h1>
+        <h1 className="text-4xl font-bold">{room.estate_title}</h1>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-10">
@@ -182,7 +182,7 @@ const RoomDetails = () => {
                 </div>
                 <form>
                 <textarea className="textarea w-full h-52 textarea-accent" required placeholder="Write Your Review here..."></textarea>
-                <div className="flex justify-start"> <button className="btn btn-error">Submit Review</button></div>
+                <div className="flex justify-start mt-5"> <button className="btn btn-error">Submit Review</button></div>
                 </form>
                 <div>
            

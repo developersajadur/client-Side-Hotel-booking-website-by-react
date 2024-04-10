@@ -21,7 +21,7 @@ export default function App() {
         spaceBetween={30}
         centeredSlides={true}
         pagination={{
-          clickable: true,
+          dynamicBullets: true,
         }}
         loop={true}
         mousewheel={true}

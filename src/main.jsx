@@ -10,6 +10,7 @@ import Home from './Components/Home';
 import Blogs from './Components/Blog/Blogs';
 import RoomDetails from './Components/Room/RoomDetails';
 import Rooms from './Components/Room/Rooms';
+import BlogDetails from './Components/Blog/BlogDetails';
 
 
 const router = createBrowserRouter([
@@ -38,7 +39,13 @@ const router = createBrowserRouter([
       },
       {
         path:"/blogs",
-        element:<Blogs></Blogs>
+        element:<Blogs></Blogs>,
+        loader:() => fetch("../public/blog.json")
+      },
+      {
+        path:"/blog/:blogId",
+        element:<BlogDetails></BlogDetails>,
+        loader:() => fetch("../public/blog.json")
       }
     ]
   },
