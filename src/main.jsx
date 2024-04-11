@@ -11,6 +11,7 @@ import Blogs from './Components/Blog/Blogs';
 import RoomDetails from './Components/Room/RoomDetails';
 import Rooms from './Components/Room/Rooms';
 import BlogDetails from './Components/Blog/BlogDetails';
+import Contact from './Components/Contact';
 
 
 const router = createBrowserRouter([
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
         path:"/blog/:blogId",
         element:<BlogDetails></BlogDetails>,
         loader:() => fetch("../public/blog.json")
+      },
+      {
+        path:"/contact",
+        element:<Contact></Contact>
       }
     ]
   },

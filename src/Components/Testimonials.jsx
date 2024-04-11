@@ -54,9 +54,9 @@ slidesPerView={3}
                               <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                             </div>
                           </div>
-                          <p>Outstanding service! Timely and professional. Can't thank them enough. The service team's efficiency and professionalism were exceptional.</p>
-                              <h2 className="card-title text-2xl font-bold">Amanda Taylor</h2>
-                              <h5 className='text-lg font-semibold'>Spruce Avenue</h5>
+                          <p>{testimonial.review}</p>
+                              <h2 className="card-title text-2xl font-bold">{testimonial.client_name}</h2>
+                              <h5 className='text-lg font-semibold'>{testimonial.address}</h5>
                               <div className="rating">
                             <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                             <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400"  />
@@ -107,9 +107,9 @@ slidesPerView={3}
                               <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                             </div>
                           </div>
-                          <p>Outstanding service! Timely and professional. Can't thank them enough. The service team's efficiency and professionalism were exceptional.</p>
-                              <h2 className="card-title text-2xl font-bold">Amanda Taylor</h2>
-                              <h5 className='text-lg font-semibold'>Spruce Avenue</h5>
+                          <p>{testimonial.review}</p>
+                              <h2 className="card-title text-2xl font-bold">{testimonial.client_name}</h2>
+                              <h5 className='text-lg font-semibold'>{testimonial.address}</h5>
                               <div className="rating">
                             <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                             <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400"  />
