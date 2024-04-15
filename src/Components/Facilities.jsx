@@ -40,7 +40,7 @@ Free Wifi Facilities</h2>
   </figure>
   <div className="card-body items-start text-start">
     <h2 className="card-title">
-Free Wifi Facilities</h2>
+    5 Stars Rettings</h2>
     <p>Atoli is well known agency and the agency is one of the best by 5-star retting and we will be benefited .</p>
     <div className="card-actions">
       <button className="btn btn-primary">Read More</button>

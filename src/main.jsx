@@ -12,6 +12,10 @@ import RoomDetails from './Components/Room/RoomDetails';
 import Rooms from './Components/Room/Rooms';
 import BlogDetails from './Components/Blog/BlogDetails';
 import Contact from './Components/Contact';
+import AuthProvider from './AuthProvider';
+import Register from './Components/SignIn&SignUp/Register';
+import Login from './Components/SignIn&SignUp/Login';
+import PrivateRoute from './Components/privateRoutes/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -34,7 +38,9 @@ const router = createBrowserRouter([
     
       {
         path:"/room-details/:roomId",
-        element:<RoomDetails></RoomDetails>,
+        element:<PrivateRoute>
+          <RoomDetails></RoomDetails>
+        </PrivateRoute>,
         loader:() =>fetch("../public/RoomDetailsData.json")
         
       },
@@ -51,6 +57,14 @@ const router = createBrowserRouter([
       {
         path:"/contact",
         element:<Contact></Contact>
+      },
+      {
+        path:"/register",
+        element:<Register></Register>
+      },
+      {
+        path:"/login",
+        element:<Login></Login>
       }
     ]
   },
@@ -58,6 +72,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+   <AuthProvider>
+   <RouterProvider router={router} />
+   </AuthProvider>
   </React.StrictMode>,
 )

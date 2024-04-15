@@ -20,7 +20,7 @@ const HomePageRooms = () => {
          <h1 className="text-4xl font-bold text-center mb-20">Our Rooms </h1>
          <div className="grid lg:grid-cols-2 gap-5 md:gap-10 lg:gap-12  ">
         {
-            rooms.slice(0 , seeDetails ).map(room => <Room
+            rooms?.slice(0 , seeDetails ).map(room => <Room
             key={room.id}
             room={room}
             ></Room>)

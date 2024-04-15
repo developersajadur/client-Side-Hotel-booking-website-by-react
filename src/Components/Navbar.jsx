@@ -1,7 +1,23 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../style.css";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider";
 
 const Navbar = () => {
+
+    const {user , logOutUser} = useContext(AuthContext)
+
+    const handleLogOut = () => {
+      logOutUser(user)
+      .then(() => {
+        console.log("Logged out successfully");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    }
+
+
     const navLinks = <>
     <li><NavLink to="/">Home</NavLink></li>
     <li><NavLink to="/rooms">Room</NavLink></li>
@@ -27,7 +43,29 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    {!user ? (
+      <Link to="/login"><button className="btn btn-primary">Sign In</button></Link>
+    ) : (
+      <div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        </div>
+      </div>
+      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+        <li>
+          <a className="justify-between">
+            Profile
+            <span className="badge">New</span>
+          </a>
+        </li>
+        <li><a>Settings</a></li>
+        <li><button onClick={handleLogOut}>Log Out</button></li>
+      </ul>
+    </div>
+    )
+
+    }
   </div>
 </div>
     );
