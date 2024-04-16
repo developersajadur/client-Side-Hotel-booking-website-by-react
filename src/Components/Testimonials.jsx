@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 const Testimonials = () => {
     const [testimonials, setTestimonials] = useState([]);
     useEffect(() => {
-        fetch('../public/ClientSays.json')
+        fetch('../../public/ClientSays.json')
         .then(res => res.json())
         .then(data => setTestimonials(data))
     } ,[])

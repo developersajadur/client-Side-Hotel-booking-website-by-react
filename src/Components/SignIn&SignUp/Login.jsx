@@ -37,9 +37,6 @@ const Login = () => {
     const { register, handleSubmit, formState: { errors }} = useForm();
     const onSubmit = (data) => {
         signInUser(data.email , data.password)
-      .then(result => {
-          console.log(result);
-        })
     }
     
     return (

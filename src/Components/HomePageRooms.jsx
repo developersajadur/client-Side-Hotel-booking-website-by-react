@@ -7,7 +7,7 @@ const HomePageRooms = () => {
     const [seeDetails , setSeeDetails] = useState([4])
     const [rooms , setRooms] = useState([])
     useEffect(() => {
-        fetch('../public/RoomDetailsData.json')
+        fetch('../../public/RoomDetailsData.json')
         .then(res => res.json())
         .then(data => setRooms(data))
     },[])

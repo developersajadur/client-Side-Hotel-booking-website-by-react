@@ -3,6 +3,7 @@ import "../style.css";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider";
 
+
 const Navbar = () => {
 
     const {user , logOutUser} = useContext(AuthContext)

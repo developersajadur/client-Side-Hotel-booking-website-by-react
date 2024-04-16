@@ -7,7 +7,7 @@ const Facilities = () => {
             {/* ------------------card-1---------------------- */}
             <div className="w-full lg:w-96 flex flex-col justify-start bg-[#F5F5F5]">
   <figure className="px-10 pt-10">
-    <img className="w-20" src="../public/icon-home.png" alt="Shoes"/>
+    <img className="w-20" src="../../public/icon-home.png" alt="Shoes"/>
   </figure>
   <div className="card-body items-start text-start">
     <h2 className="card-title">Our Hotel Facilities</h2>
@@ -20,7 +20,7 @@ const Facilities = () => {
             {/* ------------------card-2---------------------- */}
             <div className=" w-full lg:w-96  flex flex-col justify-start bg-[#F5F5F5]">
   <figure className="px-10 pt-10">
-    <img className="w-20" src="../public/icon-wifi.png" alt="Shoes"/>
+    <img className="w-20" src="../../public/icon-wifi.png" alt="Shoes"/>
   </figure>
   <div className="card-body items-start text-start">
     <h2 className="card-title">
@@ -36,7 +36,7 @@ Free Wifi Facilities</h2>
             {/* ------------------card-3---------------------- */}
             <div className=" w-full lg:w-96  flex flex-col justify-start bg-[#F5F5F5]">
   <figure className="px-10 pt-10">
-    <img className="w-20" src="../public/icon-star.png" alt="Shoes"/>
+    <img className="w-20" src="../../public/icon-star.png" alt="Shoes"/>
   </figure>
   <div className="card-body items-start text-start">
     <h2 className="card-title">
