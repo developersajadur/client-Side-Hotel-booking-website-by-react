@@ -1,32 +1,54 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider";
-import { Bounce, ToastContainer, toast } from "react-toastify";
+import {  ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import toast from "react-hot-toast";
 
 const Register = () => {
     const { createUser, googleLogin, twitterLogin, facebookLogin } = useContext(AuthContext);
 
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleSocialLogin = socialProvider => {
+        socialProvider()
+            .then(result => {
+                if (result.user) {
+                    Navigate(location?.state || "/");
+                }
+            })
+            .catch(error => {
+                toast.error(error.message);
+            });
+    };
+
     const handleGoogleLogin = () => {
-        googleLogin();
+        handleSocialLogin(googleLogin);
     };
 
     const handleFacebookLogin = () => {
-        facebookLogin();
+        handleSocialLogin(facebookLogin);
     };
 
     const handleTwitterLogin = () => {
-        twitterLogin();
+        handleSocialLogin(twitterLogin);
     };
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-
-
     const onSubmit = (data) => {
-        createUser(data.email, data.password);
-        
+        createUser(data.email, data.password)
+        .then((result) => {
+            toast.success('Login successful');
+            if (result.user) {
+                Navigate(location?.state || "/");
+            }
+        })
+        .catch(error => {
+            toast.error(error.message);
+        });
     };
 
     return (
@@ -39,7 +61,18 @@ const Register = () => {
                     <input {...register("email", { required: true })} name="email" type="email" placeholder="Your Email" className="input input-bordered w-full" />
                     {errors.email && <span className="text-sm text-red-500 font-medium -mt-4">Please Write Your Email</span>}
                     <input {...register("Photo URL")} type="text" placeholder="Your Photo URL" className="input input-bordered w-full" />
-                    <input {...register("password", { required: true })} name="password" type="password" placeholder="Your Password" className="input input-bordered w-full" />
+
+                    <label className="input input-bordered flex items-center gap-2">
+                        <input  {...register("password", { required: true })} name="password"
+                         type={showPassword ? "text" : "password"}
+                         placeholder="Your Password" className="grow" />
+                         <span onClick={ () => setShowPassword(!showPassword)} className="cursor-pointer">
+                            {
+                                showPassword ?  <FaRegEyeSlash  className=" text-2xl" /> : <FaRegEye className=" text-2xl" />
+                            }
+                         </span>
+                    </label>
+
                     {errors.password && <span className="text-sm text-red-500 font-medium -mt-4">Please Write Your Password</span>}
                     <button className="btn w-full btn-error">Sign Up</button>
                 </form>

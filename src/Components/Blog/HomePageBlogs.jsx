@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Blog from "./Blog";
-import { Link } from "react-router-dom";
 
 const HomePageBlogs = () => {
     const [blogs, setBlogs] = useState([]);

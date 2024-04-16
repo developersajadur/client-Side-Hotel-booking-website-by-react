@@ -1,11 +1,14 @@
 
 import { MdDateRange } from "react-icons/md";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const Blog = ({blog}) => {
 
     const {author,description,short_title,post_date,banner,id} = blog;
     return (
-        <div className="">
+        <div  data-aos="fade-up" data-aos-duration="4000" className="">
             <Link to={`/blog/${id}`}>
             <div className="card flex w-full border-[1px]">
   <figure className="px-10 pt-10">

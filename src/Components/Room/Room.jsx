@@ -2,14 +2,19 @@ import { FaRegUser } from "react-icons/fa";
 import { PiBoundingBoxLight } from "react-icons/pi";
 import "../../style.css";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const Room = ({room}) => {
     const {estate_title, id , description, price , status, area , parson  , image_url} = room;
     return (
       
-        <Link to={`/room-details/${id}`}>
+        <Link  data-aos="fade-up" data-aos-duration="4000" to={`/room-details/${id}`}>
           <div className="card card-side border w-[400px] lg:w-[573px] flex flex-col lg:flex-row">
             <figure >
-              <img className="p-5 lg:pl-10 rounded-t-3xl w-80 h-60 flex justify-center" src={image_url} alt="Room" />
+              <div className="p-4 w-80 h-60 flex justify-center">
+              <img className="w-72 h-52 flex rounded-2xl justify-center" src={image_url} alt="Room" />
+              </div>
             </figure>
             <div className="card-body">
               <div className="flex gap-5">

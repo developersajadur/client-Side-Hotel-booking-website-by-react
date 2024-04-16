@@ -1,3 +1,6 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const Facilities = () => {
     return (
         <div className="mt-20 mb-10">
@@ -5,7 +8,7 @@ const Facilities = () => {
         <div className="mt-10 flex flex-col lg:flex-row gap-10 px-1 lg:px-10">
 
             {/* ------------------card-1---------------------- */}
-            <div className="w-full lg:w-96 flex flex-col justify-start bg-[#F5F5F5]">
+            <div data-aos="flip-left" className="w-full lg:w-96 flex flex-col justify-start bg-[#F5F5F5]">
   <figure className="px-10 pt-10">
     <img className="w-20" src="../../public/icon-home.png" alt="Shoes"/>
   </figure>
@@ -18,7 +21,7 @@ const Facilities = () => {
   </div>
 </div>
             {/* ------------------card-2---------------------- */}
-            <div className=" w-full lg:w-96  flex flex-col justify-start bg-[#F5F5F5]">
+            <div  data-aos="flip-up" className=" w-full lg:w-96  flex flex-col justify-start bg-[#F5F5F5]">
   <figure className="px-10 pt-10">
     <img className="w-20" src="../../public/icon-wifi.png" alt="Shoes"/>
   </figure>
@@ -34,7 +37,7 @@ Free Wifi Facilities</h2>
   </div>
 </div>
             {/* ------------------card-3---------------------- */}
-            <div className=" w-full lg:w-96  flex flex-col justify-start bg-[#F5F5F5]">
+            <div data-aos="flip-right" className=" w-full lg:w-96  flex flex-col justify-start bg-[#F5F5F5]">
   <figure className="px-10 pt-10">
     <img className="w-20" src="../../public/icon-star.png" alt="Shoes"/>
   </figure>

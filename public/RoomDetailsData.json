@@ -1,7 +1,7 @@
 [
   {
       "id": 1,
-      "estate_title": "Beachfront Villa",
+      "estate_title": ": Single-family homes",
       "segment_name": "Villa",
       "description": "Experience ultimate luxury and comfort in our beachfront villa with breathtaking ocean views.",
       "big_description": "Experience ultimate luxury and comfort in our beachfront villa with breathtaking ocean views. This exquisite villa offers an unparalleled retreat with its spacious layout and elegant design. Step into a world of tranquility as you immerse yourself in the serene ambiance of coastal living. With 5000 square feet of meticulously crafted living space, this villa boasts seamless indoor-outdoor flow, perfect for entertaining or simply unwinding in style. Wake up to the sound of waves crashing against the shore and savor morning coffee on your private terrace overlooking the glistening waters. Indulge in leisurely days lounging by the pool or strolling along the pristine sands of your own private beach. Every detail has been thoughtfully curated to ensure a truly unforgettable stay, where luxury meets coastal charm.",
@@ -15,7 +15,7 @@
   },
   {
       "id": 2,
-      "estate_title": "Mountain Chalet",
+      "estate_title": "townhouses",
       "segment_name": "Chalet",
       "description": "Escape to the serenity of the mountains in our cozy chalet nestled among the pine trees.",
       "big_description": "Escape to the serenity of the mountains in our cozy chalet nestled among the pine trees. This charming retreat offers a perfect blend of rustic charm and modern amenities, providing an idyllic getaway for nature lovers and adventurers alike. With 2500 square feet of inviting living space, this chalet welcomes you with warmth and comfort from the moment you arrive. Gather around the crackling fireplace after a day of exploring the scenic trails, or soak your cares away in the bubbling hot tub under the starlit sky. Whether you're seeking adventure on the slopes or simply seeking solace in nature's embrace, this mountain chalet promises an unforgettable retreat.",
@@ -43,7 +43,7 @@
   },
   {
       "id": 4,
-      "estate_title": "Seaside Cottage",
+      "estate_title": " student housing",
       "segment_name": "Cottage",
       "description": "Find tranquility by the sea in our charming seaside cottage retreat.",
       "big_description": "Find tranquility by the sea in our charming seaside cottage retreat. This picturesque cottage offers a peaceful escape from the hustle and bustle of everyday life, where you can unwind and recharge surrounded by the beauty of nature. With 1800 square feet of cozy living space, this cottage exudes coastal charm with its nautical-inspired decor and breathtaking ocean views. Spend lazy afternoons lounging on the ocean view deck or gather around the fire pit for s'mores and stories under the stars. Whether you're seeking adventure on the high seas or simply seeking solace in the sound of waves crashing against the shore, this seaside cottage offers the perfect coastal retreat.",
@@ -57,7 +57,7 @@
   },
   {
       "id": 5,
-      "estate_title": "Countryside Farmhouse",
+      "estate_title": "senior living communities,",
       "segment_name": "Farmhouse",
       "description": "Experience the charm of rural living in our rustic countryside farmhouse.",
       "big_description": "Experience the charm of rural living in our rustic countryside farmhouse. Nestled amidst tranquil fields and rolling hills, this farmhouse offers a peaceful retreat from the chaos of modern life. With 3000 square feet of authentic country living, this farmhouse invites you to slow down and savor the simple pleasures of rural life. Wander through lush gardens and orchards bursting with fragrant blooms, or relax on the front porch swing with a glass of sweet tea in hand. Whether you're exploring the countryside on horseback or simply enjoying a quiet evening by the fireplace, this farmhouse promises a quintessential countryside getaway.",
@@ -71,7 +71,7 @@
   },
   {
       "id": 6,
-      "estate_title": "Lakeside Mansion",
+      "estate_title": "vacation rentals",
       "segment_name": "Mansion",
       "description": "Indulge in luxury living by the lake in our elegant lakeside mansion.",
       "big_description": "Indulge in luxury living by the lake in our elegant lakeside mansion. This opulent retreat offers the ultimate in sophistication and style, with 8000 square feet of lavish living space and panoramic views of the tranquil waters. From the grand foyer to the private boat dock, every detail of this mansion exudes timeless elegance and refinement. Lounge by the infinity pool overlooking the shimmering lake, or host extravagant soirées in the spacious living areas adorned with fine furnishings and exquisite artwork. Whether you're seeking relaxation or entertainment, this lakeside mansion offers a luxurious escape from the ordinary.",

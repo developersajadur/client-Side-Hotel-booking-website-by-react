@@ -54,7 +54,6 @@ const AuthProvider = ({ children }) => {
 
   // Sign in User
   const signInUser = async (email, password) => {
-    setLoading(true);
     try {
       return await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
@@ -99,6 +98,7 @@ const AuthProvider = ({ children }) => {
 
   const logOutUser =async () => {
    await signOut(auth);
+   toast.success('Log Out Successfully')
     setUser(null);
   }
 

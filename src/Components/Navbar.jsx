@@ -10,12 +10,6 @@ const Navbar = () => {
 
     const handleLogOut = () => {
       logOutUser(user)
-      .then(() => {
-        console.log("Logged out successfully");
-      })
-      .catch(error => {
-        console.log(error);
-      });
     }
 
 
