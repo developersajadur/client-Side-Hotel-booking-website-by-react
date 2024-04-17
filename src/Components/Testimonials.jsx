@@ -17,7 +17,7 @@ const Testimonials = () => {
     return (
 
 
-        <div className="lg:mt-20 ">
+        <div className="mt-10 lg:mt-20 ">
 
 
 {/* ------------------ large device--------------------- */}
@@ -76,8 +76,8 @@ slidesPerView={3}
         </div>
         {/* --------------------------- small device ------------------ */}
 
-        <div className="block lg:hidden">
-            <div className="flex ml-[-55px] py-10 mt-8 gap-20 "> <h1/>
+        <div className="block md:block lg:hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:ml-[-55px] md:ml-[-450px] py-10 mt-8 gap-20 "> <h1/>
 
 <Swiper
         spaceBetween={30}

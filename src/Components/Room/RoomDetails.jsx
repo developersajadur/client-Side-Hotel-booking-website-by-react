@@ -14,6 +14,7 @@ import 'swiper/css/pagination';
 import Swal from "sweetalert2";
 import { ToastContainer } from "react-toastify";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const RoomDetails = () => {
   const [checkIn, setCheckIn] = useState(new Date());
@@ -57,6 +58,11 @@ const RoomDetails = () => {
 //   const { estate_title, segment_name, description, price, status, area, parson, facilities, image_url } = room;  
   return (
     <div className="px-1 lg:px-10">
+      <Helmet>
+        <title>
+          {room.estate_title}
+        </title>
+      </Helmet>
       <div className="w-full text-center py-5 rounded-xl bg-[#1313130D] mt-10 mb-10">
         <h1 className="text-4xl font-bold">{room.estate_title}</h1>
       </div>

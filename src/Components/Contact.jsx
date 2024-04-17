@@ -1,8 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const Contact = () => {
     return (
         <div className='mt-10 px-1 lg:px-10'>
+
+          <Helmet>
+            <title>
+              Contact Us With Your Company
+            </title>
+          </Helmet>
 
 <div className="w-full text-center py-5 rounded-xl bg-[#1313130D] mt-10 mb-5">
             <h1 className="text-4xl font-bold">Get In Touch</h1>

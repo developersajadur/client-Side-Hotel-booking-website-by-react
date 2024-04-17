@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { ToastContainer } from "react-toastify";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Profile = () => {
     const {user , updateUserProfile} = useContext(AuthContext);
@@ -27,6 +28,11 @@ const Profile = () => {
 
     return (
         <div className="mt-10 flex flex-col lg:flex-row gap-20 justify-center items-center px-2 lg:px-10">
+            <Helmet>
+                <title>
+                    {user?.displayName || user.email || "User Details Not Found"}
+                </title>
+            </Helmet>
             <div className="flex flex-col gap-5">
             <div className="h-full w-full flex justify-center">
                <img className="rounded-full lg:h-72 lg:w-72" src={user?.photoURL || "../../public/user-img.png" }  alt="Profile Picture" />

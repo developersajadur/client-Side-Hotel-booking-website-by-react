@@ -6,6 +6,7 @@ import {  ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
     const { createUser, googleLogin, updateUserProfile, twitterLogin, facebookLogin } = useContext(AuthContext);
@@ -60,6 +61,11 @@ const Register = () => {
 
     return (
         <div className="w-full h-full flex flex-col justify-center pt-10 lg:pt-20 items-center">
+            <Helmet>
+                <title>
+                    Join With Us
+                </title>
+            </Helmet>
             <div className="px-8 py-12 rounded-3xl bg-[#F5F5F5] lg:w-[50%]">
                 <h1 className="text-4xl font-bold text-center">Create an Account!</h1>
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 mt-10">

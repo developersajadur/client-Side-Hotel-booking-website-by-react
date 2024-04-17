@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Room from "../Room/Room"
+import { Helmet } from "react-helmet";
 
 const MyRooms = () => {
     const [myRooms, setMyRooms] = useState([]);
@@ -11,6 +12,12 @@ const MyRooms = () => {
 
     return (
         <div className="px-2 lg:px-10">
+            
+            <Helmet>
+                <title>
+                    My Rooms
+                </title>
+            </Helmet>
            <div className="w-full text-center py-5 rounded-xl bg-[#1313130D] mt-10 mb-5">
             <h1 className="text-4xl font-bold">My Rooms</h1>
         </div>
@@ -23,6 +30,7 @@ const MyRooms = () => {
             ></Room>)
         }
         </div>
+
         </div>
     );
 };
