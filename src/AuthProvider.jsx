@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { FacebookAuthProvider, GoogleAuthProvider, TwitterAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { FacebookAuthProvider, GoogleAuthProvider, TwitterAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import auth from "./Components/firebase.config";
 import toast, { Toaster } from "react-hot-toast";
 import { Bounce } from "react-toastify";
@@ -51,6 +51,17 @@ const AuthProvider = ({ children }) => {
         });
     }
   };
+
+
+  // update user profile
+
+  const updateUserProfile = async (image , name) => {
+   await updateProfile(auth.currentUser, {
+    photoURL: image,
+      displayName: name
+     
+    });
+  }
 
   // Sign in User
   const signInUser = async (email, password) => {
@@ -118,7 +129,7 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  const contextValue = { user, createUser, signInUser , logOutUser , googleLogin , facebookLogin , twitterLogin , loading};
+  const contextValue = { user, createUser , updateUserProfile, signInUser , logOutUser , googleLogin , facebookLogin , twitterLogin , loading};
 
   return (
     <AuthContext.Provider value={contextValue}>

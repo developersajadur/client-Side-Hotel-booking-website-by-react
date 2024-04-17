@@ -8,7 +8,7 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import toast from "react-hot-toast";
 
 const Register = () => {
-    const { createUser, googleLogin, twitterLogin, facebookLogin } = useContext(AuthContext);
+    const { createUser, googleLogin, updateUserProfile, twitterLogin, facebookLogin } = useContext(AuthContext);
 
     const [showPassword, setShowPassword] = useState(false);
 
@@ -39,12 +39,20 @@ const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
-        createUser(data.email, data.password)
+        // create user
+        createUser(data.email, data.password )
         .then((result) => {
-            toast.success('Login successful');
-            if (result.user) {
-                Navigate(location?.state || "/");
-            }
+            console.log(result);
+            // update user
+            updateUserProfile( data.image , data.name)
+            .then ( () => {
+                toast.success('Login successful');
+                if (result.user) {
+                    Navigate(location?.state || "/");
+                }
+ 
+            })
+
         })
         .catch(error => {
             toast.error(error.message);
@@ -56,11 +64,11 @@ const Register = () => {
             <div className="px-8 py-12 rounded-3xl bg-[#F5F5F5] lg:w-[50%]">
                 <h1 className="text-4xl font-bold text-center">Create an Account!</h1>
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 mt-10">
-                    <input {...register("Name", { required: true })} type="text" placeholder="Your Full Name" className="input input-bordered w-full" />
+                    <input {...register("name", { required: true })} name="name" type="text" placeholder="Your Full Name" className="input input-bordered w-full" />
                     {errors.Name && <span className="text-sm text-red-500 font-medium -mt-4">Please Write Your Name</span>}
                     <input {...register("email", { required: true })} name="email" type="email" placeholder="Your Email" className="input input-bordered w-full" />
                     {errors.email && <span className="text-sm text-red-500 font-medium -mt-4">Please Write Your Email</span>}
-                    <input {...register("Photo URL")} type="text" placeholder="Your Photo URL" className="input input-bordered w-full" />
+                    <input {...register("image")} name="image" type="text" placeholder="Your Photo URL" className="input input-bordered w-full" />
 
                     <label className="input input-bordered flex items-center gap-2">
                         <input  {...register("password", { required: true })} name="password"

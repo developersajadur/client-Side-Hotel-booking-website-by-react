@@ -34,11 +34,11 @@ export default function App() {
       >
         {sliders.map(slider => (
           <SwiperSlide className='h-60 lg:h-96 relative' key={slider.id}>
-            <img className='h-60 lg:h-96 absolute opacity-80 z-0' src={slider.image_url} alt="" />
+            <img className='h-60 lg:h-96 absolute opacity-70 z-0' src={slider.image_url} alt="" />
             <div className="absolute z-10 inset-0 flex flex-col gap-2 items-center justify-center">
-              <h1 className='text-2xl lg:text-5xl font-bold text-center text-red-800'>{slider.estate_title}</h1>
-              <p className="lg:text-xl font-semibold text-black w-[40%]">{slider.description}</p>
-              <Link to={`/room-details/${slider.id}`}><button className="btn btn-primary">Book Now</button></Link>
+              <h1 className='text-2xl lg:text-5xl font-bold text-center text-black'>{slider.estate_title}</h1>
+              <p className="lg:text-lg font-semibold text-black w-[80%] lg:w-[40%]">{slider.description}</p>
+              <Link to={`/room-details/${slider.id}`}><button className="btn border-none bg-[#E7A500] text-black ">Book Now</button></Link>
             </div>
           </SwiperSlide>
         ))}

@@ -7,11 +7,11 @@ const TopHeader = () => {
     return (
         <div className="hidden md:block lg:block ">
         <div className="h-12 w-full bg-[#1B2132] flex items-center px-12 gap-10 justify-between ">
-            <div>
+            <div className="">
 
             <details className="dropdown ">
   <summary className=" text-white font-medium bg-[#1B2132] flex items-center gap-2"><MdLanguage />English</summary>
-  <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+  <ul className="p-2 shadow menu dropdown-content z-50 bg-base-100 rounded-box w-52">
     <li><a>Hindi</a></li>
     <li><a>Bangla</a></li>
   </ul>

@@ -7,6 +7,7 @@ import { AuthContext } from "../AuthProvider";
 const Navbar = () => {
 
     const {user , logOutUser} = useContext(AuthContext)
+    console.log(user);
 
     const handleLogOut = () => {
       logOutUser(user)
@@ -20,7 +21,7 @@ const Navbar = () => {
     <li><NavLink to="/contact">Contact</NavLink></li>
     </>
     return (
-        <div className="navbar py-3 sticky top-0 z-50 bg-white  px-1 lg:px-10">
+        <div className="navbar py-3 sticky top-0 z-40 bg-white  px-1 lg:px-10">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -43,18 +44,18 @@ const Navbar = () => {
     ) : (
       <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        <div className="w-28 rounded-full">
+          <img className="" src={user?.photoURL || "../../public/user-img.png"} />
         </div>
       </div>
       <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+      <li><a className="font-bold"> {user?.displayName || user?.email || "User Name Not Found"}</a></li>
         <li>
-          <a className="justify-between">
+          <Link to="/profile" className="justify-between">
             Profile
             <span className="badge">New</span>
-          </a>
+            </Link>
         </li>
-        <li><a>Settings</a></li>
         <li><button onClick={handleLogOut}>Log Out</button></li>
       </ul>
     </div>

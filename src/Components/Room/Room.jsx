@@ -10,10 +10,10 @@ const Room = ({room}) => {
     return (
       
         <Link  data-aos="fade-up" data-aos-duration="4000" to={`/room-details/${id}`}>
-          <div className="card card-side border w-[400px] lg:w-[573px] flex flex-col lg:flex-row">
+          <div className="card card-side border w-full lg:w-[573px] flex flex-col lg:flex-row">
             <figure >
-              <div className="p-4 w-80 h-60 flex justify-center">
-              <img className="w-72 h-52 flex rounded-2xl justify-center" src={image_url} alt="Room" />
+              <div className="p-4 lg:w-80 lg:h-60 flex justify-center">
+              <img className="lg:w-72 lg:h-52 flex rounded-2xl justify-center" src={image_url} alt="Room" />
               </div>
             </figure>
             <div className="card-body">

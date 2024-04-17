@@ -2,7 +2,7 @@
 const FaqSection = () => {
     return (
         <div>
-             <section className="w-[400px] lg:w-[1140px] container mx-auto mt-16 lg:mt-28 lg:mb-16">
+             <section className="w-full lg:w-[1140px] container mx-auto mt-16 lg:mt-28 lg:mb-16">
       <div className="mb-10 text-center">
         <h1 className="section-title font-bold text-4xl">Clients Question</h1>
         <p className="section-p text-base mt-5">
@@ -13,14 +13,14 @@ const FaqSection = () => {
 
       <div className="border rounded-2xl">
         <div className="hero flex justify-center">
-          <div className="hero-content flex-col lg:flex-row jsutify-center">
+          <div className="hero-content flex-col lg:flex-row justify-center">
             <img
               src="https://i.ibb.co/9c0y0sV/11.png"
-              className="max-w-sm w-3/4 lg:w-full rounded-lg"
+              className=" w-full lg:w-[35%] rounded-lg"
               alt="Image"
             />
             <div className="flex flex-col gap-1">
-              <div className="collapse collapse-plus w-[350px] lg:w-[700px]">
+              <div className="collapse collapse-plus lg:w-[700px]">
                 <input type="radio" name="my-accordion-3" defaultChecked />
                 <div className="collapse-title text-xl font-bold">
                 Reservation Process
@@ -32,7 +32,7 @@ const FaqSection = () => {
                 </div>
               </div>
               {/* ---------------- faq-2------------------ */}
-              <div className="collapse collapse-plus w-[350px] lg:w-[700px]">
+              <div className="collapse collapse-plus lg:w-[700px]">
                 <input type="radio" name="my-accordion-3" />
                 <div className="collapse-title text-xl font-bold">
                 Accommodation Facilities
@@ -44,7 +44,7 @@ const FaqSection = () => {
                 </div>
               </div>
               {/* ---------------- faq-3------------------ */}
-              <div className="collapse collapse-plus w-[350px] lg:w-[700px]">
+              <div className="collapse collapse-plus lg:w-[700px]">
                 <input type="radio" name="my-accordion-3" />
                 <div className="collapse-title text-xl font-bold">
                 Check-in and Check-out Procedures
@@ -56,7 +56,7 @@ const FaqSection = () => {
                 </div>
               </div>
               {/* ---------------- faq-4------------------ */}
-              <div className="collapse collapse-plus w-[350px] lg:w-[700px]">
+              <div className="collapse collapse-plus lg:w-[700px]">
                 <input type="radio" name="my-accordion-3" />
                 <div className="collapse-title text-xl font-bold">
                 Dining Options
@@ -68,7 +68,7 @@ const FaqSection = () => {
                 </div>
               </div>
               {/* ---------------- faq-5------------------ */}
-              <div className="collapse collapse-plus w-[350px] lg:w-[700px]">
+              <div className="collapse collapse-plus lg:w-[700px]">
                 <input type="radio" name="my-accordion-3" />
                 <div className="collapse-title text-xl font-bold">
                 Local Attractions and Transportation

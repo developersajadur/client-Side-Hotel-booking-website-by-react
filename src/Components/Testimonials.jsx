@@ -23,7 +23,7 @@ const Testimonials = () => {
 {/* ------------------ large device--------------------- */}
 <h1 className="text-2xl lg:text-4xl font-bold text-center">What Our Client Says</h1>
 <div className="hidden lg:block">
-            <div className="flex py-10 mt-8 gap-20 "> <h1/>
+            <div className="flex ml-[-70px] py-10 mt-8 gap-20 "> <h1/>
 
 <Swiper
 slidesPerView={3}
@@ -77,7 +77,7 @@ slidesPerView={3}
         {/* --------------------------- small device ------------------ */}
 
         <div className="block lg:hidden">
-            <div className="flex py-10 mt-8 gap-20 "> <h1/>
+            <div className="flex ml-[-55px] py-10 mt-8 gap-20 "> <h1/>
 
 <Swiper
         spaceBetween={30}
