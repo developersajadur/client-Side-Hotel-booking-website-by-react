@@ -11,11 +11,37 @@ import { Rating } from 'react-simple-star-rating'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Swal from "sweetalert2";
+import { ToastContainer } from "react-toastify";
+import toast from "react-hot-toast";
 
 const RoomDetails = () => {
   const [checkIn, setCheckIn] = useState(new Date());
   const [checkOut, setCheckOut] = useState(new Date());
+
+    // --------------------room Data fetcher --------------------
+    const rooms = useLoaderData();
+    const { roomId } = useParams();
+    const room = rooms.find(room => room.id.toString() ==  roomId);
  
+
+  const handleBookNow = () => {
+
+    const saveBookingRoom = JSON.parse(localStorage.getItem("rooms")) || [];
+    const roomExist = saveBookingRoom.find(item => item.id === room.id);
+    if (roomExist) {
+      toast.error('You Are Already Booked This Room');
+    }
+    else{
+      saveBookingRoom.push(room);
+      localStorage.setItem("rooms", JSON.stringify(saveBookingRoom));
+       Swal.fire({
+        title: "Wow! You Are Booked This Room",
+        icon: "success",
+        confirmButtonText: '<a href="">Say Thanks!</a>',
+    });
+    }
+  }
 
 
   const handleCheckIn = (data) => {
@@ -26,10 +52,7 @@ const RoomDetails = () => {
     setCheckOut(data);
   };
 
-  // --------------------room Data fetcher --------------------
-  const rooms = useLoaderData();
-  const { roomId } = useParams();
-  const room = rooms.find(room => room.id.toString() ==  roomId);
+
   
 //   const { estate_title, segment_name, description, price, status, area, parson, facilities, image_url } = room;  
   return (
@@ -111,7 +134,7 @@ const RoomDetails = () => {
             </select>
           </div>
 
-          <button className="btn btn-error text-lg text-white">Book Now</button>
+          <button onClick={handleBookNow} className="btn btn-error text-lg text-white">Book Now</button>
 
         </div>
 
@@ -191,10 +214,9 @@ const RoomDetails = () => {
            
             </div>
 
-          
-  
           </div>
         </div>
+        <ToastContainer></ToastContainer>
       </div>
     );
   };

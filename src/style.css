@@ -1,5 +1,27 @@
 
   
+  
+  #navLg li a.active{
+   border: 1px solid #E7A500;
+   background-color: transparent;
+   color: #E7A500;
+  }
+  #navLg li a:active{
+   border: 1px solid #E7A500;
+   background-color: transparent;
+   color: #E7A500;
+  }
+  #nav li a.active{
+    border: 1px solid #E7A500;
+    background-color: transparent;
+    color: #E7A500;
+  }
+  #nav li a:active{
+    border: 1px solid #E7A500;
+    background-color: transparent;
+    color: #E7A500;
+  }
+  /* ---------------- slider style ------------------- */
   .swiper {
     width: 100%;
     margin-left: auto;

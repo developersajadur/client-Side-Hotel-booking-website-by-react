@@ -16,7 +16,7 @@ const Facilities = () => {
     <h2 className="card-title">Our Hotel Facilities</h2>
     <p>We are one of the best company in the global market and we have restaurant facilities for all of our guide</p>
     <div className="card-actions">
-      <button className="btn btn-primary">Read More</button>
+      <button className="btn bg-[#E7A500]">Read More</button>
     </div>
   </div>
 </div>
@@ -32,7 +32,7 @@ Free Wifi Facilities</h2>
 
 </p>
     <div className="card-actions">
-      <button className="btn btn-primary">Read More</button>
+      <button className="btn bg-[#E7A500]">Read More</button>
     </div>
   </div>
 </div>
@@ -46,7 +46,7 @@ Free Wifi Facilities</h2>
     5 Stars Rettings</h2>
     <p>Atoli is well known agency and the agency is one of the best by 5-star retting and we will be benefited .</p>
     <div className="card-actions">
-      <button className="btn btn-primary">Read More</button>
+      <button className="btn bg-[#E7A500]">Read More</button>
     </div>
   </div>
 </div>

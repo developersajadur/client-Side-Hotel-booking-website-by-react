@@ -42,7 +42,6 @@ const Register = () => {
         // create user
         createUser(data.email, data.password )
         .then((result) => {
-            console.log(result);
             // update user
             updateUserProfile( data.image , data.name)
             .then ( () => {

@@ -15,9 +15,9 @@ const Profile = () => {
             updateUserProfile( data.image , data.name)
             .then(() => {
                 Swal.fire({
-                    title: "Wow! Account Update successfully",
+                    title: "Wow! Room Booked successfully",
                     icon: "success",
-                    confirmButtonText: '<a href="/profile">Say Thanks!</a>',
+                    confirmButtonText: '<a href="">Say Thanks!</a>',
                 });
             })
             .catch(error => {
@@ -42,7 +42,7 @@ const Profile = () => {
 
             <input {...register("image" , { required: true })} name="image" type="text" placeholder="Your Photo URL" className="input input-bordered w-full" />
             {errors.image && <span className="text-sm text-red-500 font-medium -mt-4">Please Write Your Image URL</span>}
-            <button className="btn w-full btn-error">Sign Up</button>
+            <button className="btn w-full btn-error">Update Now</button>
             </form>
             </div>
             <ToastContainer></ToastContainer>

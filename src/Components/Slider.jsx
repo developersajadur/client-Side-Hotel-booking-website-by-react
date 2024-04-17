@@ -7,7 +7,7 @@ import { Autoplay, Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/m
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function App() {
+  const Slider = () => {
   const [sliders, setSliders] = useState([]);  
   useEffect(() => {
     fetch("../../public/RoomDetailsData.json")
@@ -46,3 +46,5 @@ export default function App() {
     </div>
   );
 }
+
+export default Slider

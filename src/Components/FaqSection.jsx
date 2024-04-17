@@ -1,4 +1,3 @@
-
 const FaqSection = () => {
     return (
         <div>

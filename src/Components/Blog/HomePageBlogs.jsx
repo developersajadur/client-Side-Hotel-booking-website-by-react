@@ -31,7 +31,7 @@ const HomePageBlogs = () => {
             </div>
             <div className="flex justify-center mt-10">
                 {seeDetails < blogs.length && (
-                    <button className="btn w-fit btn-primary" onClick={handleSeeMore}>
+                    <button className="btn w-fit bg-[#E7A500]" onClick={handleSeeMore}>
                         See More
                     </button>
                 )}

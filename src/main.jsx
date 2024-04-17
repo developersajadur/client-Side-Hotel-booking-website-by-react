@@ -17,12 +17,15 @@ import Register from './Components/SignIn&SignUp/Register';
 import Login from './Components/SignIn&SignUp/Login';
 import PrivateRoute from './Components/privateRoutes/PrivateRoute';
 import Profile from './Components/Profile';
+import MyRooms from './Components/Room/MyRooms';
+import ErrorPage from './Components/ErrorPage';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:"/",
@@ -69,8 +72,17 @@ const router = createBrowserRouter([
       },
     {
       path:"/profile",
-      element:<Profile></Profile>
-    }
+      element:<PrivateRoute>
+        <Profile></Profile>
+        </PrivateRoute>
+    },
+    {
+      path:"/my-rooms",
+      element:<PrivateRoute>
+       <MyRooms></MyRooms>
+        </PrivateRoute>
+    },
+    
     ]
   }
 ]);

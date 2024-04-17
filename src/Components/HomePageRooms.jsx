@@ -29,7 +29,7 @@ const HomePageRooms = () => {
         {
             seeDetails < rooms.length && (
                 <div className="flex justify-center mt-10">
-                    <Link to="/rooms"><button  className="btn lg:w-full btn-primary"> See More </button></Link>
+                    <Link to="/rooms"><button  className="btn lg:w-full bg-[#E7A500]"> See More </button></Link>
                 
                 </div>
             )
