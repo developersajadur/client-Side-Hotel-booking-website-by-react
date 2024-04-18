@@ -19,7 +19,9 @@ const MyRooms = () => {
                 </title>
             </Helmet>
 
-       
+            <div className="w-full  text-center py-5 rounded-xl bg-[#1313130D] mt-10 mb-5">
+            <h1 className="text-4xl font-bold">Our Awesome Rooms</h1>
+        </div>
 
             {myRooms.length === 0 ?
             ( <div className="h-full w-full flex gap-5 lg:gap-10 flex-col mt-10 lg:mt-20 justify-center items-center">
@@ -31,7 +33,8 @@ const MyRooms = () => {
 
             </div> ) 
             :
-    ( <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-5 md:gap-10 lg:gap-12 mt-10">
+    (
+         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-5 md:gap-10 lg:gap-12 mt-10">
      {Array.isArray(myRooms) && myRooms.map(room => (
          <Room
              key={room.id}

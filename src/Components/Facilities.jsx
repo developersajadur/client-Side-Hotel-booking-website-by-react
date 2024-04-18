@@ -4,7 +4,13 @@ AOS.init();
 const Facilities = () => {
     return (
         <div className="mt-20 mb-10 px-2 lg:px-10">
-            <h1 className="text-4xl font-bold text-center">Why You Choose Our Hotel </h1>
+                <div className="mb-10 text-center">
+                <h1 className="text-4xl font-bold text-center">Why You Choose Our Hotel </h1>
+        <p className="section-p text-base mt-5">
+        Experience unparalleled Wifi, prime location, and exceptional amenities. <br /> Make unforgettable memories with us today
+        </p>
+      </div>
+          
         <div className="mt-10 flex justify-center flex-col md:flex-row lg:flex-row gap-10 ">
 
             {/* ------------------card-1---------------------- */}

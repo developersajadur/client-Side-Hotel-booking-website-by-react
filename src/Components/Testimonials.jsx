@@ -21,9 +21,15 @@ const Testimonials = () => {
 
         <div className="mt-10 px-2 lg:px-10 lg:mt-20 ">
 
+<div className="mb-10 text-center">
+        <h1 className="section-title font-bold text-2xl lg:text-4xl">What Our Client Says</h1>
+        <p className="section-p text-base mt-5">
+        Discover why our hotel exceeds expectations. 
+        Unforgettable <br /> experiences await. Explore now.
+        </p>
+      </div>
 
 {/* ------------------ large device--------------------- */}
-<h1 className="text-2xl lg:text-4xl font-bold text-center">What Our Client Says</h1>
 <div className="hidden lg:block">
             <div className="flex ml-[-70px] py-10 mt-8 gap-20 "> <h1/>
 

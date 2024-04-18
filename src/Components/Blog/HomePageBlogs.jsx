@@ -15,7 +15,12 @@ const HomePageBlogs = () => {
 
     return (
         <div className="mt-10 px-2 lg:px-10">
-            <h1 className="text-center text-4xl font-bold mb-10">Our Latest Blogs</h1>
+                  <div className="mb-10 text-center">
+                  <h1 className="text-center text-4xl font-bold">Our Latest Blogs</h1>
+        <p className="section-p text-base mt-5">
+        Stay updated with our latest insights, tips, and stories. <br /> Explore our blog for travel inspiration
+        </p>
+      </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {
                    Array.isArray(blogs) && blogs?.slice(0, seeDetails).map(blog => (
