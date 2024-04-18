@@ -1,7 +1,7 @@
 Hi,
 I Am Sajadur Rahman A Web Developer.
 Now I Am Introduce My New Website ( Hotel Relax ) Which Is Developed By React.
-Here Are Some Features And Characteristics
+Here Are Some Features And Characteristics Of This Website
 1. Anyone Can Book Rooms On This Website.
 2. You Can Login To our Website By Gmail & Password As Well As Facebook, Gmail, and Twitter. Before Login, You Need To Register First.
 3. If You Are Not Login You Can't Show Details Of Rooms And Can't Book Rooms. If You Clicked A Room Card Without Login, You Are Navigated To The Login Page.
