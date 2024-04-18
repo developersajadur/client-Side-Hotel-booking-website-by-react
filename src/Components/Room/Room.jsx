@@ -9,10 +9,14 @@ const Room = ({room}) => {
     const {estate_title, id , description, price , status, area , parson  , image_url} = room;
     return (
       
-        <Link  data-aos="fade-up" data-aos-duration="4000" to={`/room-details/${id}`}>
-          <div className="card card-side border w-full lg:w-[573px] flex flex-col lg:flex-row">
+        <Link  data-aos="fade-up" data-aos-duration="1000" to={`/room-details/${id}`}>
+          <div className="indicator card card-side border w-full flex flex-col lg:flex-row">
+          
             <figure >
-              <div className="p-4 lg:w-80 lg:h-60 flex justify-center">
+              <div className=" p-4 lg:w-80 lg:h-60 flex flex-row justify-center">
+              <div className="indicator-item indicator-start mt-7 ml-12">
+              <div className="px-4 font-medium bg-orange-500">{status}</div>
+  </div> 
               <img className="lg:w-72 lg:h-52 flex rounded-2xl justify-center" src={image_url} alt="Room" />
               </div>
             </figure>

@@ -43,7 +43,7 @@ const Navbar = () => {
     ) : (
       <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-28 rounded-full">
+        <div className=" text-black w-28 rounded-full">
           <img className="" src={user?.photoURL || "/user-img.png"} />
         </div>
       </div>

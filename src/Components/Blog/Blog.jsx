@@ -3,10 +3,13 @@ import { MdDateRange } from "react-icons/md";
 import { Link } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider";
 AOS.init();
 const Blog = ({blog}) => {
 
     const {author,description,short_title,post_date,banner,id} = blog;
+    const {user} = useContext(AuthContext)
     return (
         <div  data-aos="fade-up" data-aos-duration="4000" className="">
             <Link to={`/blog/${id}`}>
@@ -29,7 +32,7 @@ const Blog = ({blog}) => {
     <div className="flex gap-5 mt-2">
       <div className="avatar">
         <div className="w-14 h-14 rounded-full">
-          <img src={author.image} />
+          <img src={user?.photoURL || "/user-img.png"} />
         </div>
       </div>
       <div>

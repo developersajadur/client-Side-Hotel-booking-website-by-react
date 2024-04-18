@@ -4,9 +4,11 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Keyboard,FreeMode } from 'swiper/modules';
 import "../style.css";
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../AuthProvider';
 const Testimonials = () => {
     const [testimonials, setTestimonials] = useState([]);
+    const {user} = useContext(AuthContext);
     useEffect(() => {
         fetch('./ClientSays.json')
         .then(res => res.json())
@@ -50,8 +52,8 @@ slidesPerView={3}
                 <div className="card my-10 review-card w-96 text-start bg-white text-black">
                             <div className="card-body">
                             <div className="avatar">
-                            <div className="w-20 rounded-full">
-                              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <div className="w-16 rounded-full">
+                              <img src={user?.photoURL || "/user-img.png"}/>
                             </div>
                           </div>
                           <p>{testimonial.review}</p>
@@ -104,8 +106,8 @@ slidesPerView={2}
                 <div className="card my-10 review-card w-96 text-start bg-white text-black">
                             <div className="card-body">
                             <div className="avatar">
-                            <div className="w-20 rounded-full">
-                              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <div className="w-16 rounded-full">
+                              <img src={user?.photoURL || "/user-img.png"} />
                             </div>
                           </div>
                           <p>{testimonial.review}</p>
@@ -159,8 +161,8 @@ slidesPerView={1}
                 <div className="card my-10 review-card w-96 text-start bg-white text-black">
                             <div className="card-body">
                             <div className="avatar">
-                            <div className="w-20 rounded-full">
-                              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <div className="w-16 rounded-full">
+                              <img src={user?.photoURL || "/user-img.png"} />
                             </div>
                           </div>
                           <p>{testimonial.review}</p>
