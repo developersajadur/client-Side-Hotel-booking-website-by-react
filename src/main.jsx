@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       {
         path:"rooms",
         element:<Rooms></Rooms>,
-        loader:() =>fetch("../public/RoomDetailsData.json")
+        loader:() =>fetch("/RoomDetailsData.json")
       },
     
       {
@@ -45,18 +45,18 @@ const router = createBrowserRouter([
         element:<PrivateRoute>
           <RoomDetails></RoomDetails>
         </PrivateRoute>,
-        loader:() =>fetch("../public/RoomDetailsData.json")
+        loader:() =>fetch("/RoomDetailsData.json")
         
       },
       {
         path:"/blogs",
         element:<Blogs></Blogs>,
-        loader:() => fetch("../public/blog.json")
+        loader:() => fetch("/blog.json")
       },
       {
         path:"/blog/:blogId",
         element:<BlogDetails></BlogDetails>,
-        loader:() => fetch("../public/blog.json")
+        loader:() => fetch("/blog.json")
       },
       {
         path:"/contact",

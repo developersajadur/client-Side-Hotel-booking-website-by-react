@@ -87,16 +87,16 @@ const Register = () => {
                     </label>
 
                     {errors.password && <span className="text-sm text-red-500 font-medium -mt-4">Please Write Your Password</span>}
-                    <button className="btn w-full btn-error">Sign Up</button>
+                    <button className="btn w-full bg-[#E7A500]">Sign Up</button>
                 </form>
                 <div className="mt-5 flex justify-center items-center">
-                    <h5 className="text-lg font-bold">Already have an account? <Link className="text-[#B56952]" to="/login">Sign In</Link></h5>
+                    <h5 className="text-lg font-bold">Already have an account? <Link className="text-[#E7A500]" to="/login">Sign In</Link></h5>
                 </div>
                 <div className="divider">Register With</div>
                 <div className="flex gap-5 justify-center pt-4">
-                    <button onClick={handleGoogleLogin}><img className="h-9 w-9 rounded-full" src="../../../public/google-icon.png" alt="google" /></button>
-                    <button onClick={handleFacebookLogin}><img className="h-9 w-9 rounded-full" src="../../../public/facebook-icon.png" alt="facebook" /></button>
-                    <button onClick={handleTwitterLogin}><img className="h-9 w-9 rounded-full" src="../../../public/twitter-icon.png" alt="facebook" /></button>
+                    <button onClick={handleGoogleLogin}><img className="h-9 w-9 rounded-full" src="./google-icon.png" alt="google" /></button>
+                    <button onClick={handleFacebookLogin}><img className="h-9 w-9 rounded-full" src="./facebook-icon.png" alt="facebook" /></button>
+                    <button onClick={handleTwitterLogin}><img className="h-9 w-9 rounded-full" src="./twitter-icon.png" alt="facebook" /></button>
                 </div>
             </div>
             <ToastContainer></ToastContainer>

@@ -1,12 +1,11 @@
-import { useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useContext, useState } from "react";
+import {  Navigate, useLoaderData, useParams } from "react-router-dom";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { FaCalendarAlt, FaRegUser, FaRegEye } from "react-icons/fa";
 import { PiLineSegmentsFill, PiBoundingBoxLight } from "react-icons/pi";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
-import { Rating } from 'react-simple-star-rating'
+
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,21 +14,26 @@ import Swal from "sweetalert2";
 import { ToastContainer } from "react-toastify";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
+import { Autoplay, Keyboard, Mousewheel, Navigation, Pagination } from "swiper/modules";
+import { AuthContext } from "../../AuthProvider";
 
 const RoomDetails = () => {
   const [checkIn, setCheckIn] = useState(new Date());
   const [checkOut, setCheckOut] = useState(new Date());
 
     // --------------------room Data fetcher --------------------
+    const {user} = useContext(AuthContext)
     const rooms = useLoaderData();
+    console.log(rooms);
     const { roomId } = useParams();
-    const room = rooms.find(room => room.id.toString() ==  roomId);
+    const room = rooms?.find(room => room.id.toString() === roomId);
  
 
   const handleBookNow = () => {
-
+    if(user){
+        
     const saveBookingRoom = JSON.parse(localStorage.getItem("rooms")) || [];
-    const roomExist = saveBookingRoom.find(item => item.id === room.id);
+    const roomExist = saveBookingRoom?.find(item => item.id === room.id);
     if (roomExist) {
       toast.error('You Are Already Booked This Room');
     }
@@ -39,8 +43,10 @@ const RoomDetails = () => {
        Swal.fire({
         title: "Wow! You Are Booked This Room",
         icon: "success",
-        confirmButtonText: '<a href="">Say Thanks!</a>',
+        confirmButtonText: ' Say Thanks!',
     });
+    return <Navigate to="/login"></Navigate>
+    }
     }
   }
 
@@ -53,11 +59,8 @@ const RoomDetails = () => {
     setCheckOut(data);
   };
 
-
-  
-//   const { estate_title, segment_name, description, price, status, area, parson, facilities, image_url } = room;  
   return (
-    <div className="px-1 lg:px-10">
+    <div className="px-2 lg:px-10">
       <Helmet>
         <title>
           {room.estate_title}
@@ -77,7 +80,7 @@ const RoomDetails = () => {
               <details className="dropdown w-full">
                 <summary className="m-1 bg-white btn flex justify-between text-lg w-full">
                   {checkIn.toString().slice(0, 15)}
-                  <div className="text-red-500">
+                  <div className="text-[#E7A500]">
                     <FaCalendarAlt />
                   </div>
                 </summary>
@@ -97,7 +100,7 @@ const RoomDetails = () => {
               <details className="dropdown w-full">
                 <summary className="m-1 bg-white btn flex justify-between text-lg w-full">
                   {checkOut.toString().slice(0, 15)}
-                  <div className="text-red-500">
+                  <div className="text-[#E7A500]">
                     <FaCalendarAlt />
                   </div>
                 </summary>
@@ -140,7 +143,7 @@ const RoomDetails = () => {
             </select>
           </div>
 
-          <button onClick={handleBookNow} className="btn btn-error text-lg text-white">Book Now</button>
+          <button onClick={handleBookNow} className="btn bg-[#E7A500] text-lg text-white">Book Now</button>
 
         </div>
 
@@ -186,7 +189,8 @@ const RoomDetails = () => {
 
 
             <div className="mt-10 flex flex-col gap-4">
-              <h1 className="text-3xl font-bold">{room.estate_title} ({room.status})</h1>
+              <h1 className="text-3xl font-bold">{room.estate_title} (<span className="text-[#E7A500]">{room.status}
+                </span>) </h1>
               <h6 className="text-xl font-semibold">{room.price}</h6>
               <div className="flex flex-col lg:flex-row gap-4 lg:gap-10">
               <div className="flex items-center gap-3"><PiLineSegmentsFill />{room.segment_name} </div>
@@ -211,7 +215,7 @@ const RoomDetails = () => {
                 </div>
                 <form>
                 <textarea className="textarea w-full h-52 textarea-accent" required placeholder="Write Your Review here..."></textarea>
-                <div className="flex justify-start mt-5"> <button className="btn btn-error">Submit Review</button></div>
+                <div className="flex justify-center lg:justify-start mt-5"> <button className="btn bg-[#E7A500]">Submit Review</button></div>
                 </form>
                 <div>
            

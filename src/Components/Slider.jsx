@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
   const Slider = () => {
   const [sliders, setSliders] = useState([]);  
   useEffect(() => {
-    fetch("../../public/RoomDetailsData.json")
+    fetch("./RoomDetailsData.json")
       .then(res => res.json())
       .then(data => setSliders(data))
       .catch(error => console.error('Error fetching slider data:', error));
@@ -32,7 +32,8 @@ import { Link } from 'react-router-dom';
         modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
         className="mySwiper h-60 lg:h-96 sm:mt-5"
       >
-        {sliders.map(slider => (
+        {
+         Array.isArray(sliders) && sliders.map(slider => (
           <SwiperSlide className='h-60 lg:h-96 relative' key={slider.id}>
             <img className='h-60 lg:h-96 absolute opacity-70 z-0' src={slider.image_url} alt="" />
             <div className="absolute z-10 inset-0 flex flex-col gap-2 items-center justify-center">

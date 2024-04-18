@@ -25,7 +25,7 @@ const BlogDetails = () => {
     <h3 className="text-xl lg:text-3xl font-bold">{description}</h3>
     <p>{big_description}</p>
     <div className="card-actions justify-center mt-10">
-      <Link to="/blogs"><button className="btn btn-primary">Go Back</button></Link>
+      <Link to="/blogs"><button className="btn bg-[#E7A500]">Go Back</button></Link>
     </div>
   </div>
 </div>

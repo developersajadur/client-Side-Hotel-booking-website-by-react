@@ -11,7 +11,7 @@ const ErrorPage = () => {
                 {error.message}
             </title>
         </Helmet>
-            <h1 className="text-[150px] lg:text-[200px] font-bold text-center">{error.status || "000"}</h1>
+            <h1 className="text-[150px] lg:text-[200px] font-bold text-center">{error.status || "!"}</h1>
             <h2 className="text-3xl lg:text-4xl text-center font-bold">Oops! Page {error.statusText || error.message}</h2>
             <p className="text-sm text-center mt-3">The page you are looking for might have been removed had <br />its name changed or is temporarily unavailable.</p>
             {

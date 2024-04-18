@@ -1,7 +1,35 @@
-import React from 'react';
+
 import { Helmet } from 'react-helmet';
+import Swal from 'sweetalert2';
+
 
 const Contact = () => {
+  const handleContact = (e) => {
+    e.preventDefault();
+    let timerInterval;
+Swal.fire({
+  title: "Thanks For Contact Us",
+  html: "I will Contact Us in <b></b> milliseconds.",
+  timer: 2000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading();
+    const timer = Swal.getPopup().querySelector("b");
+    timerInterval = setInterval(() => {
+      timer.textContent = `${Swal.getTimerLeft()}`;
+    }, 100);
+  },
+  willClose: () => {
+    clearInterval(timerInterval);
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log("I was closed by the timer");
+  }
+});
+  
+  }
     return (
         <div className='mt-10 px-1 lg:px-10'>
 
@@ -15,9 +43,9 @@ const Contact = () => {
             <h1 className="text-4xl font-bold">Get In Touch</h1>
         </div>
 <div className="flex justify-center mt-10">
-    <form >
+    <form onSubmit={handleContact} >
   <div className="flex flex-col justify-center">
-    <div className="flex flex-col lg:flex-row gap-10">
+    <div className="flex flex-col md:flex-row lg:flex-row gap-10">
       <div className="">
         <h6 className="text-[#131318] text-lg font-bold w-80 mb-2">
           Your Name
@@ -42,7 +70,7 @@ const Contact = () => {
       </div>
     </div>
 
-    <div className="flex flex-col lg:flex-row gap-10 mt-8">
+    <div className="flex flex-col md:flex-row lg:flex-row gap-10 mt-8">
       <div className="">
         <h6 className="text-[#131318] text-lg font-bold w-80 mb-2">
           Subject
@@ -80,8 +108,8 @@ const Contact = () => {
       </div>
     </div>
     <div
-      className="w-[320px]  lg:w-[680px] mt-5 lg:mt-8 flex justify-center">
-      <button className="btn py-2 lg:py-3 text-white font-semibold bg-red-600 px-24 lg:px-72"
+      className="w-fit md:w-full lg:w-full mt-5 lg:mt-8 flex justify-center">
+      <button className="btn py-2 lg:py-3 text-black font-semibold bg-[#E7A500] px-24 md:px-72 lg:px-72"
         >Get In Touch</button>
     </div>
   </div>

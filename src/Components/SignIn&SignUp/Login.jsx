@@ -17,6 +17,7 @@ const Login = () => {
         socialProvider()
             .then(result => {
                 if (result.user) {
+                    toast.success('Login successful');
                     navigate(location?.state || "/");
                 }
             })
@@ -41,8 +42,8 @@ const Login = () => {
     const onSubmit = (data) => {
         signInUser(data.email, data.password)
             .then((result) => {
-                toast.success('Login successful');
                 if (result.user) {
+                    toast.success('Login successful');
                     navigate(location?.state || "/");
                 }
             })
@@ -83,16 +84,16 @@ const Login = () => {
                         </div>
                         <Link to="#">Forgot My Password?</Link>
                     </div>
-                    <button className="btn w-full btn-error">Sign In</button>
+                    <button className="btn w-full bg-[#E7A500]">Sign In</button>
                 </form>
                 <div className="mt-5 flex justify-center">
-                    <h5 className="text-lg font-bold">Not a Member? <Link className="text-[#B56952]" to="/register">Sign Up</Link></h5>
+                    <h5 className="text-lg font-bold">Not a Member? <Link className="text-[#E7A500]" to="/register">Sign Up</Link></h5>
                 </div>
                 <div className="divider">Login With</div>
                 <div className="flex gap-5 justify-center pt-4">
-                    <button onClick={handleGoogleLogin}><img className="h-9 w-9 rounded-full" src="../../../public/google-icon.png" alt="google" /></button>
-                    <button onClick={handleFacebookLogin}><img className="h-9 w-9 rounded-full" src="../../../public/facebook-icon.png" alt="facebook" /></button>
-                    <button onClick={handleTwitterLogin}><img className="h-9 w-9 rounded-full" src="../../../public/twitter-icon.png" alt="twitter" /></button>
+                    <button onClick={handleGoogleLogin}><img className="h-9 w-9 rounded-full" src="./google-icon.png" alt="google" /></button>
+                    <button onClick={handleFacebookLogin}><img className="h-9 w-9 rounded-full" src="./facebook-icon.png" alt="facebook" /></button>
+                    <button onClick={handleTwitterLogin}><img className="h-9 w-9 rounded-full" src="./twitter-icon.png" alt="twitter" /></button>
                 </div>
             </div>
         </div>

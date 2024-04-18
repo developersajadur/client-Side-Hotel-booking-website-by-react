@@ -3,14 +3,14 @@ import 'aos/dist/aos.css';
 AOS.init();
 const Facilities = () => {
     return (
-        <div className="mt-20 mb-10">
+        <div className="mt-20 mb-10 px-2 lg:px-10">
             <h1 className="text-4xl font-bold text-center">Why You Choose Our Hotel </h1>
-        <div className="mt-10 flex flex-col lg:flex-row gap-10 px-1 lg:px-10">
+        <div className="mt-10 flex justify-center flex-col md:flex-row lg:flex-row gap-10 ">
 
             {/* ------------------card-1---------------------- */}
-            <div data-aos="flip-left" className=" lg:w-96 flex flex-col justify-start bg-[#F5F5F5]">
+            <div data-aos="flip-left" className=" lg:w-96 flex flex-col justify-start md:justify-center lg:justify-start bg-[#F5F5F5]">
   <figure className="px-10 pt-10">
-    <img className="w-20" src="../../public/icon-home.png" alt="Shoes"/>
+    <img className="w-20" src="./icon-home.png" alt="Shoes"/>
   </figure>
   <div className="card-body items-start text-start">
     <h2 className="card-title">Our Hotel Facilities</h2>
@@ -21,9 +21,9 @@ const Facilities = () => {
   </div>
 </div>
             {/* ------------------card-2---------------------- */}
-            <div  data-aos="flip-left" className=" lg:w-96  flex flex-col justify-start bg-[#F5F5F5]">
+            <div  data-aos="flip-left" className=" lg:w-96  flex flex-col justify-start md:justify-center lg:justify-start bg-[#F5F5F5]">
   <figure className="px-10 pt-10">
-    <img className="w-20" src="../../public/icon-wifi.png" alt="Shoes"/>
+    <img className="w-20" src="./icon-wifi.png" alt="Shoes"/>
   </figure>
   <div className="card-body items-start text-start">
     <h2 className="card-title">
@@ -37,9 +37,9 @@ Free Wifi Facilities</h2>
   </div>
 </div>
             {/* ------------------card-3---------------------- */}
-            <div  data-aos="flip-left" className=" w-full lg:w-96  flex flex-col justify-start bg-[#F5F5F5]">
+            <div  data-aos="flip-left" className=" w-full lg:w-96  flex flex-col justify-start md:justify-center lg:justify-start bg-[#F5F5F5]">
   <figure className="px-10 pt-10">
-    <img className="w-20" src="../../public/icon-star.png" alt="Shoes"/>
+    <img className="w-20" src="./icon-star.png" alt="Shoes"/>
   </figure>
   <div className="card-body items-start text-start">
     <h2 className="card-title">

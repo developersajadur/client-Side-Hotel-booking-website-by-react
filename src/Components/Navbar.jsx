@@ -30,7 +30,7 @@ const Navbar = () => {
        {navLinks}
       </ul>
     </div>
-    <Link to="/"><img className="lg:w-32 h-16" src="../../public/logo.png" alt="hotel" /></Link>
+    <Link to="/"><img className="lg:w-32 h-16" src="/logo.png" alt="hotel" /></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul id="navLg" className="menu menu-horizontal nav px-1 text-xl font-semibold flex gap-5">
@@ -39,12 +39,12 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
     {!user ? (
-      <Link to="/login"><button className="btn btn-primary">Sign In</button></Link>
+      <Link to="/login"><button className="btn bg-[#E7A500]">Sign In</button></Link>
     ) : (
       <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-28 rounded-full">
-          <img className="" src={user?.photoURL || "../../public/user-img.png"} />
+          <img className="" src={user?.photoURL || "/user-img.png"} />
         </div>
       </div>
       <ul id="navLg" tabIndex={0} className=" mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">

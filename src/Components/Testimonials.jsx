@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 const Testimonials = () => {
     const [testimonials, setTestimonials] = useState([]);
     useEffect(() => {
-        fetch('../../public/ClientSays.json')
+        fetch('./ClientSays.json')
         .then(res => res.json())
         .then(data => setTestimonials(data))
     } ,[])
@@ -17,7 +17,7 @@ const Testimonials = () => {
     return (
 
 
-        <div className="mt-10 lg:mt-20 ">
+        <div className="mt-10 px-2 lg:px-10 lg:mt-20 ">
 
 
 {/* ------------------ large device--------------------- */}
@@ -43,7 +43,7 @@ slidesPerView={3}
       >
 
         {
-            testimonials.map(testimonial =>
+             Array.isArray(testimonials) && testimonials?.map(testimonial =>
                 <SwiperSlide
                 key={testimonial.id}
                 >
@@ -74,12 +74,13 @@ slidesPerView={3}
       </Swiper>
         </div>
         </div>
-        {/* --------------------------- small device ------------------ */}
+        {/* --------------------------- medium device ------------------ */}
 
-        <div className="block md:block lg:hidden">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:ml-[-55px] md:ml-[-450px] py-10 mt-8 gap-20 "> <h1/>
+        <div className="hidden md:block lg:hidden">
+            <div className="grid md:grid-cols -mt-20 gap-20 "> <h1/>
 
 <Swiper
+slidesPerView={2}
         spaceBetween={30}
         freeMode={true}
         pagination={{
@@ -96,7 +97,62 @@ slidesPerView={3}
       >
 
         {
-            testimonials.map(testimonial =>
+           Array.isArray(testimonials) && testimonials.map(testimonial =>
+                <SwiperSlide
+                key={testimonial.id}
+                >
+                <div className="card my-10 review-card w-96 text-start bg-white text-black">
+                            <div className="card-body">
+                            <div className="avatar">
+                            <div className="w-20 rounded-full">
+                              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                          </div>
+                          <p>{testimonial.review}</p>
+                              <h2 className="card-title text-2xl font-bold">{testimonial.client_name}</h2>
+                              <h5 className='text-lg font-semibold'>{testimonial.address}</h5>
+                              <div className="rating">
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400"  />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked/>
+                          </div>
+                              
+                            </div>
+                          </div>
+                </SwiperSlide>
+            )
+        }
+ 
+      </Swiper>
+        </div>
+        </div>
+
+        {/* --------------------------- small device ------------------ */}
+
+        <div className="block md:hidden lg:hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-3 -mt-20 gap-20 "> <h1/>
+
+<Swiper
+slidesPerView={1}
+        spaceBetween={30}
+        freeMode={true}
+        pagination={{
+            dynamicBullets: true,
+        }}
+        loop={true}
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+        }}
+        keyboard={true}
+        modules={[FreeMode, Pagination,Keyboard, Autoplay]}
+        className="mySwiper "
+      >
+
+        {
+           Array.isArray(testimonials) && testimonials.map(testimonial =>
                 <SwiperSlide
                 key={testimonial.id}
                 >

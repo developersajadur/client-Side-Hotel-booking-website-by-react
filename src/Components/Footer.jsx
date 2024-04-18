@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="mt-20">
             <footer className="footer p-10 bg-[#1B2132] text-xl text-white">
   <aside>
-  <Link to="/"><img className="w-36" src="../../public/logo.png" alt="logo" /></Link>
+  <Link to="/"><img className="w-36" src="./logo.png" alt="logo" /></Link>
     <p>Thank you for choosing Hotel Relax. <br /> Your perfect getaway awaits.</p>
     <div className="flex flex-col gap-3 mt-5 text-white">
                 <div className="flex items-center gap-3 text-base font-medium"><IoHome /> Chirirbandar, Dinajpur, Bangladesh</div>

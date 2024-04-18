@@ -13,9 +13,9 @@ const Blogs = () => {
             <div className="w-full  text-center py-5 rounded-xl bg-[#1313130D] mt-10 mb-5">
             <h1 className="text-4xl font-bold">Our Latest Blogs</h1>
         </div>
-        <div  className="grid lg:grid-cols-3 gap-5 md:gap-10 lg:gap-12 mt-10  ">
+        <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 lg:gap-12 mt-10  ">
             {
-                blogs?.map(blog => <Blog
+               Array.isArray(blogs) && blogs?.map(blog => <Blog
                 key={blog.id}
                 blog={blog}
                 ></Blog>)

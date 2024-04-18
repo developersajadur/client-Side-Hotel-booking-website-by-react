@@ -1,7 +1,7 @@
 const FaqSection = () => {
     return (
         <div>
-             <section className="w-full lg:w-[1140px] container mx-auto mt-16 lg:mt-28 lg:mb-16">
+             <section className="w-full lg:w-[1140px] container mx-auto mt-5 lg:mt-10 lg:mb-16">
       <div className="mb-10 text-center">
         <h1 className="section-title font-bold text-4xl">Clients Question</h1>
         <p className="section-p text-base mt-5">
@@ -12,7 +12,7 @@ const FaqSection = () => {
 
       <div className="border rounded-2xl">
         <div className="hero flex justify-center">
-          <div className="hero-content flex-col lg:flex-row justify-center">
+          <div className="hero-content flex-col md:flex-row lg:flex-row justify-center">
             <img
               src="https://i.ibb.co/9c0y0sV/11.png"
               className=" w-full lg:w-[35%] rounded-lg"

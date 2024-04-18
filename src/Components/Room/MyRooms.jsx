@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import Room from "../Room/Room"
+import Room from "../Room/Room";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 const MyRooms = () => {
     const [myRooms, setMyRooms] = useState([]);
@@ -12,25 +13,36 @@ const MyRooms = () => {
 
     return (
         <div className="px-2 lg:px-10">
-            
             <Helmet>
                 <title>
                     My Rooms
                 </title>
             </Helmet>
-           <div className="w-full text-center py-5 rounded-xl bg-[#1313130D] mt-10 mb-5">
-            <h1 className="text-4xl font-bold">My Rooms</h1>
-        </div>
 
-            <div className="grid lg:grid-cols-2 gap-5 md:gap-10 lg:gap-12 mt-10 ">
-        {
-            myRooms.map(room => <Room
-            key={room.id}
-            room={room}
-            ></Room>)
-        }
-        </div>
+       
 
+            {myRooms.length === 0 ?
+            ( <div className="h-full w-full flex gap-5 lg:gap-10 flex-col mt-10 lg:mt-20 justify-center items-center">
+
+                <h1 className="text-xl lg:text-5xl text-center font-bold">Oops! You have Not Booked Any Room</h1>
+                <Link to="/rooms">
+                <button className="btn bg-[#E7A500]">Booking Rooms</button>
+                </Link>
+
+            </div> ) 
+            :
+    ( <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-5 md:gap-10 lg:gap-12 mt-10">
+     {Array.isArray(myRooms) && myRooms.map(room => (
+         <Room
+             key={room.id}
+             room={room}
+         />
+     ))}
+ </div>
+            )
+            }
+
+           
         </div>
     );
 };
